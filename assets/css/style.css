@@ -1,13 +1,79 @@
+/* Custom font definitions */
+@font-face {
+    font-family: 'Idhmavaha Sans';
+    src: url('../fonts/IdhmavahaSans.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Idhmavaha Serif';
+    src: url('../fonts/IdhmavahaSerif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Sans Grantha';
+    src: url('../fonts/NotoSansGrantha-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Sans Tamil';
+    src: url('../fonts/NotoSansTamil-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Serif Grantha';
+    src: url('../fonts/NotoSerifGrantha-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Serif Tamil';
+    src: url('../fonts/NotoSerifTamil-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Shobhika Dravida';
+    src: url('../fonts/Shobhika-Dravida.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Shobhika';
+    src: url('../fonts/Shobhika-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    --color-crimson: #a8002c;
+    --color-gold: #d4af37;
+    --color-offwhite: #f9f6f2;
+    --color-dark: #222;
+    --color-text: #222;
+    --color-link: var(--color-crimson);
+    --color-link-hover: var(--color-gold);
+}
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
-    color: #222;
+    background: var(--color-offwhite);
+    color: var(--color-text);
 }
 header {
-    background: #222;
-    color: #fff;
+    background: var(--color-crimson);
+    color: var(--color-gold);
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -16,15 +82,20 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    color: var(--color-gold);
 }
 nav a {
-    color: #fff;
+    color: var(--color-gold);
     margin-left: 1.5rem;
     text-decoration: none;
     font-weight: 500;
 }
 nav a:hover {
+    color: var(--color-crimson);
+    background: var(--color-gold);
     text-decoration: underline;
+    border-radius: 4px;
+    padding: 0.2em 0.5em;
 }
 main {
     max-width: 800px;
@@ -40,8 +111,8 @@ section {
 footer {
     text-align: center;
     padding: 1rem;
-    background: #222;
-    color: #fff;
+    background: var(--color-crimson);
+    color: var(--color-gold);
     position: fixed;
     width: 100%;
     bottom: 0;
