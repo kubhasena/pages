@@ -78,29 +78,35 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(168,0,44,0.05);
 }
 header h1 {
     margin: 0;
     font-size: 2rem;
     color: var(--color-gold);
+    font-family: 'Idhmavaha Serif', 'Roboto', serif;
+}
+nav {
+    display: flex;
+    gap: 1.5rem;
 }
 nav a {
     color: var(--color-gold);
-    margin-left: 1.5rem;
     text-decoration: none;
     font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+    padding: 0.2em 0.5em;
 }
 nav a:hover {
     color: var(--color-crimson);
     background: var(--color-gold);
     text-decoration: underline;
-    border-radius: 4px;
-    padding: 0.2em 0.5em;
 }
 main {
     max-width: 800px;
     margin: 2rem auto;
-    background: #fff;
+    background: var(--color-offwhite);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -117,4 +123,5 @@ footer {
     width: 100%;
     bottom: 0;
     left: 0;
+    font-family: 'Idhmavaha Serif', 'Roboto', serif;
 }
