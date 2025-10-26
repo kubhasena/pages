@@ -1,75 +1,113 @@
 /* Custom font definitions */
 @font-face {
-    font-family: 'Idhmavaha Sans';
+    font-family: 'tg-sans';
     src: url('../fonts/IdhmavahaSans.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Idhmavaha Serif';
+    font-family: 'tg-serif';
     src: url('../fonts/IdhmavahaSerif.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Noto Sans Grantha';
+    font-family: 'grantha-sans';
     src: url('../fonts/NotoSansGrantha-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Noto Sans Tamil';
+    font-family: 'tamil-sans';
     src: url('../fonts/NotoSansTamil-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Noto Serif Grantha';
+    font-family: 'grantha-serif';
     src: url('../fonts/NotoSerifGrantha-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Noto Serif Tamil';
+    font-family: 'tamil-serif';
     src: url('../fonts/NotoSerifTamil-VariableFont_wdth,wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Shobhika Dravida';
+    font-family: 'dn-dravida';
     src: url('../fonts/Shobhika-Dravida.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Shobhika';
+    font-family: 'dn-old';
     src: url('../fonts/Shobhika-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'english';
+    src: local('Arial'), local('Helvetica'), local('Liberation Sans'), local('DejaVu Sans'), local('sans-serif');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
-    --color-crimson: #a8002c;
-    --color-gold: #d4af37;
-    --color-offwhite: #f9f6f2;
+    --color-crimson: #391a1a;
+    --color-crimson-light: #6a2a2a;
+    --color-gold: #bca765;
+    --color-offwhite: #f1e5cb;
     --color-dark: #222;
     --color-text: #222;
     --color-link: var(--color-crimson);
     --color-link-hover: var(--color-gold);
 }
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'tg-sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: var(--color-offwhite);
+    background: var(--color-crimson);
     color: var(--color-text);
+}
+.site-header, .site-container {
+    max-width: 900px;
+    width: calc(100% - 32px);
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--color-crimson-light);
+    color: var(--color-gold);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 8px rgba(168,0,44,0.05);
+    position: relative;
+    margin: 1.5rem auto 0 auto;
+    z-index: 2;
+}
+.site-container {
+    margin: 0.7rem auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-offwhite);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    padding-bottom: 2rem;
+    z-index: 1;
 }
 header {
     background: var(--color-crimson);
@@ -84,7 +122,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: var(--color-gold);
-    font-family: 'Idhmavaha Serif', 'Roboto', serif;
+    font-family: 'tg-serif', serif;
 }
 nav {
     display: flex;
@@ -114,14 +152,99 @@ main {
 section {
     margin-bottom: 2.5rem;
 }
-footer {
+.site-header__topline {
+    order: -1;
+    width: 100%;
     text-align: center;
-    padding: 1rem;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.1;
+}
+.site-header__topline::before {
+    content: '௳';
+    display: block;
+    font-family: 'dn-dravida';
+    font-size: 0.8em;
+}
+.site-header__topline::after {
+    content: '𑌸𑍍𑌕𑌨𑍍𑌦𑌾𑌯 𑌨𑌮𑍋 𑌨𑌮𑌃';
+    display: block;
+    font-family: 'grantha-sans';
+    font-size: 0.8em;
+}
+.site-header__title,
+.site-nav {
+    order: 0;
+}
+.site-nav {
+    display: none;
+}
+.menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    margin: 0.3rem 0;
+    background: var(--color-gold);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 4.5rem;
+    right: 2rem;
     background: var(--color-crimson);
     color: var(--color-gold);
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    font-family: 'Idhmavaha Serif', 'Roboto', serif;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    min-width: 120px;
+    padding: 0.5em 0;
+    z-index: 9;
+    text-align: right;
+}
+.dropdown-menu a {
+    display: block;
+    color: var(--color-gold);
+    text-decoration: none;
+    padding: 0.5em 1.2em;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.dropdown-menu a:hover {
+    background: var(--color-gold);
+    color: var(--color-crimson);
+}
+.menu-open .dropdown-menu {
+    display: block;
+}
+@media (max-width: 600px) {
+    .menu-toggle {
+        top: 1rem;
+        right: 1rem;
+    }
+    .dropdown-menu {
+        top: 3.5rem;
+        right: 1rem;
+    }
+}
+.site-main {
+    flex: 1 0 auto;
+    border-radius: 0 0 16px 16px;
+    background: var(--color-offwhite);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 2rem;
+    max-width: 100%;
+    margin: 0 auto;
 }
